@@ -63,7 +63,7 @@ public class SecurityConfig {
                     var corsConfig = new org.springframework.web.cors.CorsConfiguration();
                     corsConfig.setAllowedOrigins(List.of(
                             "https://calc-front-eta.vercel.app/",
-                            "https://calculator-chanllenge.vercel.app/"
+                            "https://calculator-challenge-new.vercel.app/"
                     ));
                     corsConfig.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     corsConfig.setAllowedHeaders(List.of("*"));
