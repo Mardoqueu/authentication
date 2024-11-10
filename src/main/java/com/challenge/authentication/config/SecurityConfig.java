@@ -15,6 +15,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import java.util.List;
 
+/**
+ * Security configuration class that enables web security and configures various security settings
+ * such as authentication manager and security filter chain.
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -28,6 +32,14 @@ public class SecurityConfig {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Creates and configures an {@link AuthenticationManager} with a custom {@link UserService} and {@link PasswordEncoder}.
+     * This allows the application to manage user authentication.
+     *
+     * @param http an {@link HttpSecurity} object used for configuring web-based security for specific HTTP requests.
+     * @return an {@link AuthenticationManager} object used for user authentication within the application.
+     * @throws Exception if an error occurs while configuring the {@link AuthenticationManagerBuilder}.
+     */
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =

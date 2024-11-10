@@ -3,6 +3,12 @@ package com.challenge.authentication.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+/**
+ * Data Transfer Object for authentication requests.
+ *
+ * This class captures the necessary information for authentication,
+ * including a username and a password.
+ */
 public class AuthRequestDTO {
 
     @NotBlank(message = "Username cannot be blank")

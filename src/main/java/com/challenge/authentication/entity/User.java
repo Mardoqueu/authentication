@@ -6,6 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.math.BigDecimal;
 
+/**
+ * Represents a user entity with id, username, password, and balance fields.
+ * This class is mapped to a database table using JPA annotations.
+ */
 @Entity
 public class User {
 

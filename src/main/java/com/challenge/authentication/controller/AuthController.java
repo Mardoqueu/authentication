@@ -28,11 +28,24 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    /**
+     * Registers a new user in the system.
+     *
+     * @param userDTO A UserDTO object containing the username and password of the user to be registered.
+     * @return A ResponseEntity containing a UserDTO object of the newly registered user.
+     */
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
         return ResponseEntity.ok(UserMapper.toDTO(userService.saveUser(userDTO)));
     }
 
+    /**
+     * Authenticates a user with the provided credentials and generates a JWT token and user ID.
+     *
+     * @param request An AuthRequestDTO object containing the username and password of the user attempting to log in.
+     * @return A ResponseEntity containing an AuthResponseDTO with the JWT token and the user ID upon successful authentication.
+     * @throws Exception if authentication fails due to invalid credentials.
+     */
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody AuthRequestDTO request) throws Exception {
         try {
